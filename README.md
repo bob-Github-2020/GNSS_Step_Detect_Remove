@@ -6,7 +6,9 @@ Useage:
 Step_detect_remove.py (Detect and remove "obvious" steps in the GNSS ENU time series)
 do_loop_step_detect_remove (Loop the module (Step_detect_remove.py) on a group of ENU time series files)
 *.col (ENU time series)
+
 Run: 
+  
   ./do_loop_step_detect_remove
 
 Input:

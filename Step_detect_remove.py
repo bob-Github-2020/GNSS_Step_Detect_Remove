@@ -5,6 +5,7 @@
 # Step_detect_remove.py, do_loop_step_detect_remove, *.col
 # RUN: ./do_loop_step_detect_remove
 ## VERY SLOW!
+# The main output file is: *.col_StepFree
 
 ## Useful weblinks:
 # Use the offline rupture module
@@ -59,10 +60,7 @@ ts3 = ts.iloc[:,3]
 mod = "rbf"
 pn = 60
 mz = 60
-# algo1 = rpt.Pelt(model="rbf").fit(ts10)
-# lgo = rpt.Pelt(model=model, min_size=3, jump=5).fit(signal)
-# min_size=10, all change points will be at least 10 samples apart.
-# jump controls the grid of possible change points; for instance, if jump=k, only changes at k, 2*k, 3*k,... are considered.
+
 ts10 = ts1.values.reshape(-1,1)
 algo1 = rpt.Pelt(model=mod, min_size=mz).fit(ts10)
 change_location1 = algo1.predict(pen=pn)
@@ -86,9 +84,9 @@ file1.write("EW: "+str(change_location2)+'\n')
 file1.write("UD: "+str(change_location3)+'\n')
 file1.close()
 
-#--------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 ## ---Remove identified STEPS-----
-## --------------------------------------------------------------------------------------------------------
+## -----------------------------------------------------------------------
 def cal_step(y,istep,nav):
     y1=np.zeros(nav)
     y2=np.zeros(nav)

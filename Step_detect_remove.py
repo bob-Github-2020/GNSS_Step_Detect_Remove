@@ -1,8 +1,20 @@
 #!/usr/bin/python3
-# 1-3-2022, add REMOVE the steps, output StepFree ENU time series
-# 11-04-2021
-# https://medium.com/dataman-in-ai/finding-the-change-points-in-a-time-series-95a308207012
-# 9-15-2021, Detect steps from GNSS-derived NEU time series
+
+# 1-3-2022, Bob Wang, Detect and remove steps from the GNSS ENU time series
+# Useage, put the following files in your working directory:
+# Step_detect_remove.py, do_loop_step_detect_remove, *.col
+# RUN: ./do_loop_step_detect_remove
+## VERY SLOW!
+
+## Useful weblinks:
+# Use the offline rupture module
+# https://ctruong.perso.math.cnrs.fr/ruptures-docs/build/html/detection/pelt.html
+# http://dev.ipol.im/~truong/ruptures-docs/build/html/general-info.html#user-guide
+# https://gist.githubusercontent.com/dataman-git/2bd0c16250c775576a0fd200de724550/raw/6cb7b879d2ffab7edc7b38fe328c5589880ad9b4/ruptures
+# https://techrando.com/2019/08/14/a-brief-introduction-to-change-point-detection-using-python/
+# https://centre-borelli.github.io/ruptures-docs/user-guide/detection/pelt/
+
+
 import os
 import math
 import csv
@@ -12,18 +24,17 @@ import random
 import ruptures as rpt
 import changefinder
 import matplotlib.pyplot as plt
-# plt.switch_backend("TkAgg")
-
 from pandas import read_csv
 
 plt.rcParams.update({'font.size': 14})
 
 # Input GPS data
 ts = []
+## For processing individual stations
+# fin = 'MSFX_GOM20_neu_cm.col'
 
-  # fin = 'MSFX_GOM20_neu_cm.col'
-
-# Read the "fin" from a file, I use Bshell to loop
+## For processing a group of ENU files
+# Read the "fin" from a file, I use Bshell to loop--do_loop_detect_remove
 f = open('process.ctl', 'r')
 ftxt = f.readline()
 fin = ftxt.rstrip('\n')
@@ -33,24 +44,13 @@ print (fin)
 gnss = fin[0:4]
 print (gnss)
 
-# ts1 = pd.read_csv (fin, delimiter=r"\s+", header=1, index_col=0, usecols=[0, 1])
 # ts = pd.read_csv (fin, delimiter=r"\s+", header=1, index_col=0, usecols= [0, 2])
 ts = pd.read_csv (fin, header=0, delim_whitespace=True)
-# print (ts)
+
 xx = ts.iloc[:,0]
 ts1 = ts.iloc[:,1]
 ts2 = ts.iloc[:,2]
 ts3 = ts.iloc[:,3]
-
-# print (ts1)
-
-# Use the offline rupture module
-# https://ctruong.perso.math.cnrs.fr/ruptures-docs/build/html/detection/pelt.html
-# http://dev.ipol.im/~truong/ruptures-docs/build/html/general-info.html#user-guide
-# https://gist.githubusercontent.com/dataman-git/2bd0c16250c775576a0fd200de724550/raw/6cb7b879d2ffab7edc7b38fe328c5589880ad9b4/ruptures
-# https://techrando.com/2019/08/14/a-brief-introduction-to-change-point-detection-using-python/
-
-# https://centre-borelli.github.io/ruptures-docs/user-guide/detection/pelt/
 
 ##--------------------------------------------------------------------
 # Detect the change points
@@ -81,11 +81,9 @@ print (change_location3)
 
 # write CPD to a file
 file1 = open(gnss+'.CPD', 'w')
-# Writing a string to file
 file1.write("NS: "+str(change_location1)+'\n')
 file1.write("EW: "+str(change_location2)+'\n')
 file1.write("UD: "+str(change_location3)+'\n')
-# Closing file
 file1.close()
 
 #--------------------------------------------------------------------------------------------------------
@@ -156,10 +154,8 @@ fout = fin + "_StepFree"
 df = pd.concat([xt, yns,yew,yud], axis=1)
 df.columns = ['Year', 'NS-cm', 'EW-cm','UD-cm']
 df.to_csv(fout, header=True, index=None, sep=' ', mode='w', float_format='%.5f')
-              
-
 ##-----------------------------------------------------------------------------------
-# Plot the change points
+# Plot the change points on the original and StepFree time series
 ##-----------------------------------------------------------------------------------
 
 # plot_change_points(ts1,change_location1)

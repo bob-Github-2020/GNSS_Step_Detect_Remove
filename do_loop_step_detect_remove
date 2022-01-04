@@ -1,0 +1,19 @@
+#!/bin/sh
+## 9-15-2021, loop the Python "Step_detect.py" on all NEU files
+
+##get list of all *.col file
+for file in `ls *.col`; do
+echo $file > process.ctl
+./Step_detect_remove.py
+rm $file
+done
+
+
+####generate Houston_psveloH.txt
+#for file in `ls *psveloH.txt`;do
+#cat $file >> Houston_psveloH.txt
+#done
+####generate Houston_psveloV.txt
+#for file in `ls *psveloV.txt`;do
+#cat $file >> Houston_psveloV.txt
+#done

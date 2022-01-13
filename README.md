@@ -1,4 +1,4 @@
-# GNSS Step Detect Remove
+# GNSS Step Detection and Remove
 
 Last updated on 1-4-2022, by Bob Wang
 

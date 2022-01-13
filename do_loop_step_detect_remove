@@ -1,5 +1,5 @@
 #!/bin/sh
-## 2-4-2022, Bob, loop the Python mondule "Step_detect_remove.py" for all NEU files (*.col).
+## 1-4-2022, Bob, loop the Python mondule "Step_detect_remove.py" for all NEU files (*.col).
 ## The output from the modle is *.col_StepFree" file
 
 ##get list of all *.col file

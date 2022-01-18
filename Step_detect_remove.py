@@ -10,8 +10,8 @@
 # https://medium.com/dataman-in-ai/finding-the-change-points-in-a-time-series-95a308207012
 
 ## Useage, put the following files in your working directory:
-# Step_detect_remove.py, do_loop_step_detect_remove, *.col
-# RUN: ./do_loop_step_detect_remove.sh
+# GNSS_step_detection_remove.py, do_loop_GNSS_step_detection_remove.sh, *.col
+# RUN: ./do_loop_GNSS_step_detection_remove.sh
 
 # The main output file is: *.col_StepFree
 

@@ -21,3 +21,7 @@ For components, contact bob.g.wang@gmail.com
 
 Sample output plot (black: original ENU time series; blue: step-free time series)
 
+![MSFX_step_remove](https://user-images.githubusercontent.com/65426380/149859503-7d11dacb-28d5-45ca-b2b7-79b2b5f88f88.png)
+![MSGB_step_remove](https://user-images.githubusercontent.com/65426380/149859532-2d993dea-ae39-4b16-bc61-d9f8911e579a.png)
+![MSLU_step_remove](https://user-images.githubusercontent.com/65426380/149859575-e21cf7ea-e43d-41ae-9217-9437d1057755.png)
+![MSPK_step_remove](https://user-images.githubusercontent.com/65426380/149859622-c4047600-8f6c-4658-b7ee-0095b33c166a.png)

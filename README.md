@@ -19,7 +19,7 @@ Output: *.col_StepFree, and several plots
 
 For components, contact bob.g.wang@gmail.com
 
-Sample output plot (black: original ENU time series; blue: step-free time series)
+Samples of output plots (black: original ENU time series; blue: step-free time series)
 
 ![MSFX_step_remove](https://user-images.githubusercontent.com/65426380/149859503-7d11dacb-28d5-45ca-b2b7-79b2b5f88f88.png)
 ![MSGB_step_remove](https://user-images.githubusercontent.com/65426380/149859532-2d993dea-ae39-4b16-bc61-d9f8911e579a.png)

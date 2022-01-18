@@ -4,7 +4,7 @@
 ## Decide to use rpt.KernelCPD, https://centre-borelli.github.io/ruptures-docs/examples/kernel-cpd-performance-comparison/
 ## rpt.Pelt--rbf is too slow, almost can not be used for long GNSS time series
 ## l1 and L2 are better, but still slow!!
-## Decide to use rpt.KernelCPD, ---https://centre-borelli.github.io/ruptures-docs/examples/kernel-cpd-performance-comparison/
+## Decide to use rpt.KernelCPD
 ## algo1 = rpt.KernelCPD(kernel="linear", min_size=mz).fit(ts10), AMAZING!!!! Fast and same results with rpt.Pelt
 
 # https://medium.com/dataman-in-ai/finding-the-change-points-in-a-time-series-95a308207012

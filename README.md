@@ -1,6 +1,6 @@
 # GNSS Step Detection and Remove
 
-Last updated on 1-4-2022, by Bob Wang
+Last updated on 1-18-2022, by Bob Wang
 
 Useage: Download the following files into your working directory
 
@@ -17,10 +17,7 @@ Run:
 
 Output: *.col_StepFree, and several plots
 
-THIS PROGRAM RUNS VERY SLOW!
-
 For components, contact bob.g.wang@gmail.com
 
 Sample output plot (black: original ENU time series; blue: step-free time series)
 
-![MSFX_step](https://user-images.githubusercontent.com/65426380/148094103-f2837d48-aba0-4fe5-8e6d-47633b7102c9.png)

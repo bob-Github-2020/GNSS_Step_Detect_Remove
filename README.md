@@ -2,7 +2,7 @@
 
 Last updated on 1-18-2022, by Bob Wang
 
-The Python module is used in the following publication:
+The Python module was developed in the following publication:
 
 Wang, G.; Greuter, A.; Petersen, C.M.; Turco, M.J. Houston GNSS Network for Subsidence and Faulting Monitoring: Data Analysis Methods and Products. J. Surv. Eng. 2022, 148, doi:10.1061/(asce)su.1943-5428.0000399. https://ascelibrary.org/doi/10.1061/%28ASCE%29SU.1943-5428.0000399
 

@@ -2,6 +2,13 @@
 
 Last updated on 1-18-2022, by Bob Wang
 
+The Python module is used in the following publication:
+
+Wang, G.; Greuter, A.; Petersen, C.M.; Turco, M.J. Houston GNSS Network for Subsidence and Faulting Monitoring: Data Analysis Methods and Products. J. Surv. Eng. 2022, 148, doi:10.1061/(asce)su.1943-5428.0000399. https://ascelibrary.org/doi/10.1061/%28ASCE%29SU.1943-5428.0000399
+
+[2022_HoustonNet_Data_Processing.pdf](https://github.com/bob-Github-2020/GNSS_Step_Detect_Remove/files/9993924/2022_HoustonNet_Data_Processing.pdf)
+
+
 Useage: Download the following files into your working directory
 
 GNSS_step_detection_remove.py (Detect and remove "obvious" steps in the GNSS ENU time series)
